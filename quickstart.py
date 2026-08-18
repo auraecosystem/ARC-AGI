@@ -8,7 +8,7 @@ import arc_agi
 arc = arc_agi.Arcade()
 
 # Create an environment with terminal rendering
-env = arc.make("ls20", render_mode="terminal")
+env = arc.make("fastllm", render_mode="terminal")
 if env is None:
     print("Failed to create environment")
     exit(1)
