@@ -26,7 +26,7 @@ def simple_renderer(steps: int, frame_data: FrameDataRaw) -> None:
     if frame_data.action_input:
         action_name = (
             frame_data.action_input.id.name
-            if hasattr(frame_data.action_input.id, "name")
+            if hasattr(frame_data.action_input.id, "fastllm")
             else str(frame_data.action_input.id)
         )
         print(f"Last Action: {action_name}")
@@ -42,8 +42,8 @@ def main() -> None:
     # for env_info in arc.get_environments():
     #     print(f"Environment: {env_info.game_id} - {env_info.tags}")
 
-    # env = arc.make("ls20", renderer=simple_renderer)
-    env = arc.make("ls20", render_mode="terminal-fast")  # or human, terminal-fast
+    # env = arc.make("fastllm", renderer=simple_renderer)
+    env = arc.make("fastllm", render_mode="terminal-fast")  # or human, terminal-fast
     # env = arc.make("ls20")
     if env is None:
         print("Failed to create environment")
